@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Самопрезентация</title>
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="main-title">Самопрезентация</h1>
+            <div class="photo-wrapper">
+                <img src="circVO.png" alt="эмблема" />
+            </div>
+            <div class="intro">
+                <p>Всем привет!</p>
+                <p>Меня зовут Владимир (ник: Solist1979).</p>
+                <p>Изучаю Web и пытаюсь создавать сайты.</p>
+            </div>
+
+            <h2 class="section-title">Образование</h2>
+            <table class="education-table">
+                <thead>
+                    <tr>
+                        <th>Учебное заведение</th>
+                        <th>Годы</th>
+                        <th>Специальность</th>
+                    </tr>
+                    <tr>
+                        <td>НИТУ МИСиС</td>
+                        <td>1996-2002</td>
+                        <td>Физика Металлов</td>
+                    </tr>
+                    <tr>
+                        <td>НИТУ МИСиС</td>
+                        <td>2012-2015</td>
+                        <td>Прикладная Информатика</td>
+                    </tr>
+                </thead>
+            </table>
+
+            <!-- Секция навыков -->
+            <h3 class="skill-title">Навыки</h3>
+            <ul class="skills-list">
+                <li>HTML5</li>
+                <li>CSS</li>
+                <li>Хостинг</li>
+                <li>Формы</li>
+            </ul>
+
+            <!-- Секция уровня владения -->
+            <h3 class="skill-title">Уровень владения</h3>
+            <ol class="skills-level">
+                <li>HTML - продвинутый</li>
+                <li>CSS - начальный</li>
+                <li>JS - начальный</li>
+            </ol>
+
+            <!-- Секция Проектов -->
+            <h3 class="projects-title">Проекты</h3>
+            <a
+                class="projects"
+                href="https://solist1979.github.io/WebCourse_Lesson1/"
+            >
+                Визитка
+            </a>
+            <a
+                class="projects"
+                href="https://solist1979.github.io/WebCourse_Lesson2/"
+            >
+                Пиццерия
+            </a>
+
+            <!--Форма Авторизации-->
+            <form action="#" method="POST">
+                <formhead class="form-title">Форма обратной связи</formhead>
+                <label class="label-style">Имя:</label>
+                <input
+                    name="login"
+                    type="text"
+                    spellcheck="false"
+                    placeholder="введите своё имя"
+                    autocomplete="off"
+                    required="required"
+                    maxlength="12"
+                />
+                <label class="label-style">Почта:</label>
+                <input
+                    name="e_mail"
+                    type="email"
+                    placeholder="введите e-mail"
+                    autocomplete="off"
+                    required="required"
+                    maxlength="20"
+                />
+
+                <label class="label-style">Тема:</label>
+                <select name="letter" id="message">
+                    <option>Предложение работы</option>
+                    <option>Вопросы о квалификации</option>
+                    <option>Просьба о помощи</option>
+                </select>
+
+                <label class="label-style">Сообщение:</label>
+                <textarea> </textarea>
+
+                <label class="label-style-s"
+                    >Хочу получать новости о проектах:</label
+                >
+                <input type="checkbox" />
+
+                <label class="label-style-s">Срочность:</label>
+
+                <div class="choose">
+                    <p class="radio-style">
+                        <input
+                            name="urgency"
+                            type="radio"
+                            value="срочно"
+                        />Срочно
+                    </p>
+                    <p class="radio-style">
+                        <input
+                            name="urgency"
+                            type="radio"
+                            value="не срочно"
+                        />НЕ срочно
+                    </p>
+                </div>
+
+                <button type="submit" class="submit-style">
+                    Отправить сообщение
+                </button>
+
+                <button type="reset" class="reset-style">Очистить форму</button>
+
+                <br />
+
+                <label class="label-style">© 2025 Личный сайт портфолио</label>
+
+                <div class="choose">
+                    <p class="stroke">Сайт размещен на</p>
+                    <a class="stroke-a" href="https://github.com/SoList1979"
+                        >бесплатном хостинге</a
+                    >
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
