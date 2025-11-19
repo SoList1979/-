@@ -1,0 +1,46 @@
+/* "ЛОСКУТКИ"  */
+/*Меньше ширины 200 */
+@media only screen and (max-width:  200px) {
+  #modal-window, #i-middle-up, #i-middle-down, #l, #d, table, .in-form {
+    display: none;
+    opacity: 0; 
+    pointer-events: none;  
+  }
+}
+/*Меньше высоты 200 */
+@media only screen and (max-height: 200px) {
+  #modal-window, #i-middle-up, #i-middle-down, #l, #d, table, .in-form {
+    display: none;
+    opacity: 0; 
+    pointer-events: none;  
+  }
+}
+/*Пейзаж*/
+@media only screen and (orientation: landscape) and (min-height: 25vw) {
+}
+/*Широкий пейзаж*/
+@media only screen and (orientation: landscape) and (max-height: 25vw) {
+  #modal-window, #i-middle-up, #i-middle-down, #l, #d, table, .in-form {
+    display: none;
+    opacity: 0; 
+    pointer-events: none;  
+  }
+}
+/*Портрет*/
+@media only screen and (orientation: portrait ) and (min-width:  25vh) {
+}
+/*Портрет Уже*/
+@media only screen and (orientation: portrait ) and (max-width:  43vh) {
+  /*Отключение выбора оформления*/ 
+  #left-up-corner {
+    display: none;
+  }
+}
+/*Узкий портрет*/
+@media only screen and (orientation: portrait ) and (max-width:  25vh) {
+  #modal-window, #i-middle-up, #i-middle-down, #l, #d, table, .in-form {
+    display: none;
+    opacity: 0; 
+    pointer-events: none;  
+  }
+}

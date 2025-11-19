@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>icogon</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport"           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+        <meta name="description"        lang = "ru" content="шахматоподобная игра на полиэдрической доске">
+        <meta name="author"             lang = "ru" content="Solist: Зимин Владимир">
+        <meta name="keywords"           lang = "ru" content="ICOGON, онлайн-игра, онлайн игра, online game, шахматоподобная игра, полиэдрическая доска, на сфере, многранник Гольдберга">
+        <meta name="google"             lang = "ru" content="notranslate">
+        <link rel="stylesheet" type="text/css" href="CSS/reset.css">
+        <link rel="stylesheet" type="text/css" href="CSS/icogon.css">
+        <link rel="stylesheet" type="text/css" href="CSS/media.css">
+        <link rel="stylesheet" type="text/css" href="CSS/fonts.css">
+        <link rel="stylesheet" type="text/css" href="CSS/forms.css">
+        <link rel="stylesheet" type="text/css" href="CSS/shadows.css">
+        <link rel="stylesheet" type="text/css" href="CSS/animations.css">
+        <link rel="shortcut icon" href="images/logo/icogon.png" type="image/png">
+    </head>
+
+    <body>
+        <canvas id="canvasicogon"></canvas>
+            <h2 class= "shadow-fix-icogon">ICOGON</h2>
+            <h2 class="stroke-h2 trafaret">ICOGON</h2>
+        <group>
+            <user-opponent>
+                <div id="l"> <l data-i18n="gold">Золото</l></div>
+                    <pause>
+                        <img src="images/logo/icogon.png"        class="small-picture">
+                        <img src="images/pictogramms/pause/pause0.png" class="small-picture-pause-0">
+                        <img src="images/pictogramms/pause/play0.png"  class="small-picture-play-0">
+                        <img src="images/pictogramms/pause/pause1.png" class="small-picture-pause-1">
+                        <img src="images/pictogramms/pause/play1.png"  class="small-picture-play-1">
+                        <img src="images/pictogramms/pause/pause2.png" class="small-picture-pause-2">
+                        <img src="images/pictogramms/pause/play2.png"  class="small-picture-play-2">
+                        <img src="images/pictogramms/pause/pause3.png" class="small-picture-pause-3">
+                        <img src="images/pictogramms/pause/play3.png"  class="small-picture-play-3">
+                    </pause>
+                <div id="d"> <d data-i18n="purp">Пурпур</d></div>
+            </user-opponent>
+        </group>
+        
+        <div id="left-up-corner">
+            <select-csv>    
+                <p class="select-csv">
+                    <csv id="vo" class="vo" value="1"></csv>
+                    <csv id="bv" class="bv" value="2"></csv>
+                    <csv id="og" class="og" value="3"></csv>
+                </p>
+            </select-csv>
+        </div>
+        
+        <div id ="i-middle-up">
+            <div id ="begin-end-demo"> 
+                <begin data-i18n="begin">ВХОД</begin>
+                <end data-i18n="end">ВЫХОД</end>
+            </div>
+        </div>
+        <table>
+            <tr> <td><div id="omega" data-i18n="omega">баланс</div></td> <td><div id="check-mate" data-i18n="check-mate">процесс</div></td></tr>
+            <tr> <td><div id="field" data-i18n="field">клетка</div></td> <td><div id="unit"       data-i18n="unit"      > фигура</div></td></tr>
+            <tr> <td><div id="time"  data-i18n="time" >таймер</div></td> <td><div id="move"       data-i18n="move"      >  ход  </div></td></tr>
+        </table>
+        
+        <div id ="i-middle-down">
+            <div id="auto-button">
+                <auto-button>
+                    <img src="images/pictogramms/buttons-down/automove.png" class="pictogram">
+                </auto-button>
+            </div>
+            <div id="set-button">
+                <set-button>
+                    <img src="images/pictogramms/buttons-down/set.png" class="pictogram">
+                </set-button>
+            </div>
+            <div id="update-button">
+                <update-button>
+                    <img src="images/pictogramms/buttons-down/update.png" class="pictogram">
+                </update-button>
+            </div>
+            <div id="help-button">
+                <help-button>
+                    <img src="images/pictogramms/buttons-down/help.png" class="pictogram">
+                </help-button>
+            </div>
+            <div id="exchange-button">
+                <exchange-button>
+                    <img src="images/pictogramms/buttons-down/balance.png" class="pictogram">
+                </exchange-button>
+            </div>
+        </div>
+        
+        <div id="modal-window" class="zoom">
+            
+            <form class="settings"> 
+                <formhead class="shadow-fix color">Сторона</formhead>
+                <select-color>
+                    <div id="select-light" class="select-light"> 
+                        <input id="light" name="color" type="radio" class="radio-l" value="LIGHT" required="required"> 
+                            <p data-i18n="gold"> Золото </p> 
+                    </div>
+                    <div id="select-dark"  class="select-dark" > 
+                        <input id="dark"  name="color" type="radio" class="radio-d" value="DARK"  required="required">
+                            <p data-i18n="purp"> Пурпур </p> 
+                    </div>
+                </select-color>
+                <formhead class="shadow-fix heuristics">Сложность</formhead> 
+                <select-heuristics>
+                    <div class="select-wide-deep">
+                        Глубина ИИ
+                        <div class="select-dif-range">
+                            <div class="range-container">
+                                <input id="DepthLevel" name="DepthLevel" type="range" min="1" max="4" step="1" value="2"> 
+                                <span class="range-value" id="rangeValueDepthLevel"></span>
+                            </div>
+                            <div id="percents">полуходы</div>
+                        </div>
+                    </div>
+                </select-heuristics>
+                <formhead class="shadow-fix time">Таймер</formhead> 
+                <select-timelimit>
+                    <div class="select-time">
+                        <div class="select-time-range">
+                            <input id="on-off"    name="on-off"   type="checkbox" class="checkbox"  required="required">  
+                            <div class="range-container">
+                                <input id="timeLimit" name="timeLimit" type="range" min="10" max="90" step="10" value="10">
+                                <span class="range-value" id="rangeValueTime"></span>
+                            </div>
+                            <div id="minutes">минуты</div>
+                        </div>
+                    </div>
+                </select-timelimit>
+                <div id="close-button-test-set" class="test">Закрыть</div>
+                <div id="close-button-game-set" class="game">Закрыть</div>
+            </form>
+            
+            <form id="forms" class="description"> 
+                <formhead class="shadow-fix test">Режим ТРЕНИРОВКИ</formhead>
+                <div class="help-part test">
+                    <small>
+                        <div class="export">
+                            <s-begin>ВХОД</s-begin>
+                        </div>
+                        <div class="native">                           
+                            <arrow>➠</arrow><action>В игру</action>
+                        </div>
+                    </small>
+                    <small>
+                        <div class="export">
+                            <s-pause>
+                                <img src="images/logo/icogon.png"              class="s-picture">
+                                <img src="images/pictogramms/pause/pause0.png" class="s-picture-pause-0">
+                                <img src="images/pictogramms/pause/play0.png"  class="s-picture-play-0">
+                                <img src="images/pictogramms/pause/pause1.png" class="s-picture-pause-1">
+                                <img src="images/pictogramms/pause/play1.png"  class="s-picture-play-1">
+                                <img src="images/pictogramms/pause/pause2.png" class="s-picture-pause-2">
+                                <img src="images/pictogramms/pause/play2.png"  class="s-picture-play-2">
+                                <img src="images/pictogramms/pause/pause3.png" class="s-picture-pause-3">
+                                <img src="images/pictogramms/pause/play3.png"  class="s-picture-play-3">
+                            </s-pause>
+                        </div>
+                        <div class="native">
+                            <arrow>➠</arrow><action>Пауза</action>
+                        </div>
+                    </small>
+                    <small>
+                        <div class="export">
+                            <s-l data-i18n="gold">Золото</s-l><s-d data-i18n="purp">Пурпур</s-d>
+                        </div>
+                        <div class="native">
+                            <arrow>➠</arrow><action>Автоходы</action>
+                        </div>
+                    </small>
+                    
+                    <div class="vertical">
+                        <div class="gorizontal">
+                            <figure id="swipe"  class="single"><img src="images/pictogramms/help/map-swipe.png"             alt="" class="img-fit"><figcaption class="forcaption">ручной поворот</figcaption></figure>
+                            <figure id="center" class="double"><img src="images/pictogramms/help/camera-center.png"         alt="" class="img-fit"><figcaption class="forcaption">центровка</figcaption></figure>
+                            <figure id="pinch"  class="single"><img src="images/pictogramms/help/map-pinch.png"             alt="" class="img-fit"><figcaption class="forcaption">масштаб</figcaption></figure>
+                        </div>
+                        <div class="gorizontal">
+                            <figure id="left-tap"  class="single"><img src="images/pictogramms/help/left-map-tap.png"          alt="" class="img-fit"><figcaption class="forcaption">вращение влево</figcaption></figure>
+                            <figure id="move-unit" class="single"><img src="images/pictogramms/help/move.png"                  alt="" class="img-fit"><figcaption class="forcaption">ход</figcaption></figure>
+                            <figure id="right-tap" class="single"><img src="images/pictogramms/help/right-map-tap.png"         alt="" class="img-fit"><figcaption class="forcaption">вращение вправо</figcaption></figure>
+                        </div>
+                        <div class="gorizontal">
+                            <figure id="left-double-tap"  class="single"><img src="images/pictogramms/help/left-map-double-tap.png"   alt="" class="img-fit"><figcaption class="forcaption">стоп вращение</figcaption></figure>
+                            <figure id="center-tap"       class="single"><img src="images/pictogramms/help/center-map-tap.png"        alt="" class="img-fit"><figcaption class="forcaption">стоп вращение</figcaption></figure>
+                            <figure id="right-double-tap" class="single"><img src="images/pictogramms/help/right-map-double-tap.png"  alt="" class="img-fit"><figcaption class="forcaption">стоп вращение</figcaption></figure>
+                        </div>
+                    </div>
+                </div>
+                <div id="close-button-test" class="test">Закрыть</div>
+                    
+                <formhead class="shadow-fix game">Режим ИГРЫ</formhead>
+                <div class="help-part game">
+                    <small>
+                        <div class="export">
+                            <s-begin>ВЫХОД</s-begin>
+                        </div>
+                        <div class="native">
+                            <arrow>➠</arrow><action>Из игры</action>
+                        </div>
+                    </small>
+                    <small>
+                        <div class="export">
+                            <s-pause>
+                                <img src="images/logo/icogon.png"        class="s-picture">
+                                <img src="images/pictogramms/pause/pause0.png" class="s-picture-pause-0">
+                                <img src="images/pictogramms/pause/play0.png"  class="s-picture-play-0">
+                                <img src="images/pictogramms/pause/pause1.png" class="s-picture-pause-1">
+                                <img src="images/pictogramms/pause/play1.png"  class="s-picture-play-1">
+                                <img src="images/pictogramms/pause/pause2.png" class="s-picture-pause-2">
+                                <img src="images/pictogramms/pause/play2.png"  class="s-picture-play-2">
+                                <img src="images/pictogramms/pause/pause3.png" class="s-picture-pause-3">
+                                <img src="images/pictogramms/pause/play3.png"  class="s-picture-play-3">
+                            </s-pause>
+                        </div>
+                        <div class="native">
+                            <arrow>➠</arrow><action>Пауза</action>
+                        </div>
+                    </small>
+                    <small>
+                        <div class="export">
+                            <s-l data-i18n="gold">Золото</s-l><s-d data-i18n="purp">Пурпур</s-d>
+                        </div>
+                        <div class="native">
+                            <arrow>➠ </arrow><action>Очередь хода</action>
+                        </div>
+                    </small>
+                    
+                    <div class="vertical">
+                        <div class="gorizontal">
+                            <figure id="swipe"  class="single"><img src="images/pictogramms/help/map-swipe.png"             alt="" class="img-fit"><figcaption class="forcaption">ручной поворот</figcaption></figure>
+                            <figure id="center" class="double"><img src="images/pictogramms/help/camera-center.png"         alt="" class="img-fit"><figcaption class="forcaption">центровка</figcaption></figure>
+                            <figure id="pinch"  class="single"><img src="images/pictogramms/help/map-pinch.png"             alt="" class="img-fit"><figcaption class="forcaption">масштаб</figcaption></figure>
+                        </div>
+                        <div class="gorizontal">
+                            <figure id="left-tap"  class="single"><img src="images/pictogramms/help/left-map-tap.png"          alt="" class="img-fit"><figcaption class="forcaption">вращение влево</figcaption></figure>
+                            <figure id="move-unit" class="single"><img src="images/pictogramms/help/move.png"                  alt="" class="img-fit"><figcaption class="forcaption">ход</figcaption></figure>
+                            <figure id="right-tap" class="single"><img src="images/pictogramms/help/right-map-tap.png"         alt="" class="img-fit"><figcaption class="forcaption">вращение вправо</figcaption></figure>
+                        </div>
+                        <div class="gorizontal">
+                            <figure id="left-double-tap"  class="single"><img src="images/pictogramms/help/left-map-double-tap.png"   alt="" class="img-fit"><figcaption class="forcaption">стоп вращение</figcaption></figure>
+                            <figure id="center-tap"       class="single"><img src="images/pictogramms/help/center-map-tap.png"        alt="" class="img-fit"><figcaption class="forcaption">стоп вращение</figcaption></figure>
+                            <figure id="right-double-tap" class="single"><img src="images/pictogramms/help/right-map-double-tap.png"  alt="" class="img-fit"><figcaption class="forcaption">стоп вращение</figcaption></figure>
+                        </div>
+                    </div>
+                </div>
+                <div id="close-button-game" class="game">Закрыть</div>
+            </form>
+        </div> 
+        
+        <div id="help-window" class="zoom">
+           <div id="zoom-swipe">            <img src="images/pictogramms/help/map-swipe.png"            alt="" class="img-fit"><figcaption class="zoomcaption">ручной поворот</figcaption></div> 
+           <div id="zoom-center">           <img src="images/pictogramms/help/camera-center.png"        alt="" class="img-fit"><figcaption class="zoomcaption">центровка</figcaption></div>
+           <div id="zoom-pinch">            <img src="images/pictogramms/help/map-pinch.png"            alt="" class="img-fit"><figcaption class="zoomcaption">масштаб</figcaption></div>
+           <div id="zoom-left-tap">         <img src="images/pictogramms/help/left-map-tap.png"         alt="" class="img-fit"><figcaption class="zoomcaption">вращение влево</figcaption></div>
+           <div id="zoom-move-unit">        <img src="images/pictogramms/help/move.png"                 alt="" class="img-fit"><figcaption class="zoomcaption">ход</figcaption></div>
+           <div id="zoom-right-tap">        <img src="images/pictogramms/help/right-map-tap.png"        alt="" class="img-fit"><figcaption class="zoomcaption">вращение вправо</figcaption></div>
+           <div id="zoom-left-double-tap">  <img src="images/pictogramms/help/left-map-double-tap.png"  alt="" class="img-fit"><figcaption class="zoomcaption">стоп вращение</figcaption></div>
+           <div id="zoom-center-tap">       <img src="images/pictogramms/help/center-map-tap.png"       alt="" class="img-fit"><figcaption class="zoomcaption">стоп вращение</figcaption></div>
+           <div id="zoom-right-double-tap"> <img src="images/pictogramms/help/right-map-double-tap.png" alt="" class="img-fit"><figcaption class="zoomcaption">стоп вращение</figcaption></div>
+        </div>
+        
+        <script src="JS/localization.js"></script>
+        
+        <script src="JS/libs/jquery-3.7.1.js"></script>
+        <script src="JS/libs/three.js"></script>
+        <script src="JS/libs/AstroControls.js"></script>
+        
+        <script src="JS/mathematics.js"></script>
+        
+        <script src="JS/scripts/data/3D-graphics-data.js"></script>
+        <script src="JS/scripts/data/basic-data.js"></script>
+        <script src="JS/scripts/data/system-data.js"></script>
+        <script src="JS/scripts/data/dev-tests.js"></script>
+        
+        <script src="JS/scripts/decoration/DOM.js"></script>
+        <script src="JS/scripts/decoration/canvas.js"></script>
+        
+        <script src="JS/initialization.js"></script>
+        
+        <script src="JS/scripts/events.js"></script>
+        
+        <script src="JS/scripts/algorithms/clusters.js"></script>
+        <script src="JS/scripts/algorithms/analitics.js"></script>
+        <script src="JS/scripts/algorithms/AI.js"></script> 
+        
+    </body> 
+</html>

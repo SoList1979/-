@@ -1,0 +1,61 @@
+*, *:before, *:after {
+  margin:  0; 
+  padding: 0;
+          box-sizing: border-box;
+     -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /*cursor: none;*/
+  /*можно использовать, но надо всё переделывать – просто другой формат*/
+}
+
+/* Custom Cursor */
+/*.indicator, .indicator-outline {*/
+/*  z-index: 999;*/
+/*  pointer-events: none;*/
+/*  position: absolute;*/
+/*  top:  50%;*/
+/*  left: 50%;*/
+/*  border-radius: 50%;*/
+/*  opacity: 0;*/
+/*  -webkit-transform: translate(-50%, -50%);*/
+/*          transform: translate(-50%, -50%);*/
+/*  transition: opacity 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;*/
+/*  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;*/
+/*  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;*/
+/*}*/
+/*.indicator {*/
+/*  width: 1vmin;*/
+/*  height:1vmin;*/
+/*  background-color: rgba(255, 0, 0, 0.7);*/
+/*}*/
+/*.indicator-outline {*/
+/*  width: 4vmin;*/
+/*  height:4vmin;*/
+/*  background-color: rgba(0, 255, 255, 0.5);*/
+  /*background-image: url("/images/logo/icogon.png");*/
+/*}*/
+/*-------------------------------------------------*/
+
+html {
+  height: 100%; 
+}
+
+body {
+  line-height: 1;
+  color: #000000;
+  background-color: #000000;
+  
+  background-repeat: no-repeat; 
+  background-size: 100vw 100vh;
+  overflow  : hidden;
+  height: 100%;
+  width:  100%;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  
+          filter: grayscale(100%) brightness(.8) blur(0.5vh) hue-rotate(90deg);
+     -moz-filter: grayscale(100%) brightness(.8) blur(0.5vh) hue-rotate(90deg);
+  -webkit-filter: grayscale(100%) brightness(.8) blur(0.5vh) hue-rotate(90deg);
+}

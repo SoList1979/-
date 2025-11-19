@@ -1,0 +1,368 @@
+body:after {
+    content:
+        url("/images/logo/m_icogon.png")
+        url("/images/logo/icogon.png")
+        url("/images/logo/icogon00.png")
+    ;
+    display: none;
+}
+img { 
+    pointer-events: none; 
+}
+.stroke-h2 {
+    display: block;
+    background-image: radial-gradient(ellipse closest-side, #ffffff, #000000);
+    background-size: 200% 300%;
+    /*10% 50% = точка старта анимации через js и jquery*/
+    background-position: 10% 50%; 
+}
+.trafaret {
+    /*ТРАФАРЕТ*/
+     /*text - обрезка фона по тексту*/
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -o-background-clip: text;
+     /*transparent - прозрачность текста*/
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -o-text-fill-color: transparent;
+    /*В СОЧЕТАНИИ = ТРАФАРЕТ*/
+}
+
+#i-middle-up, #i-middle-down {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  width: 100vw;
+  flex-direction:  row;
+  align-items:     center;
+  justify-content: center;
+}
+#i-middle-up {
+  height: 10vmin;       /* такие странные сочетания единиц для баланса при изменении ориентации*/
+  top: calc(2vh - 1vw); /* такие странные сочетания единиц для баланса при изменении ориентации*/
+}
+#i-middle-down {
+   bottom: 1vh;
+}
+#update-button, #set-button, #help-button, #auto-button, #exchange-button {
+  position: relative;
+  margin:  0.5vmin;
+}
+#begin-end-demo  {
+  position: relative;
+  display: inline-block;
+  margin:  0;
+} 
+#close-button-game, #close-button-test, #close-button-game-set, #close-button-test-set {
+  margin: 0.2vmax 0 0.5vmax 0;
+}
+#close-button-game, #close-button-test, #close-button-game-set, #close-button-test-set, begin, end {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  font-family: name-font;
+  font-size:  2.5vh;
+  text-decoration: none;
+  text-align: center;
+  outline: none;
+  border: 0.4vh solid;
+  border-radius: 0.7vh;
+  cursor: pointer;
+  user-select: none;
+}
+#close-button-game, #close-button-test, #close-button-game-set, #close-button-test-set, begin, end {
+  padding: 0.5vh 0.6vh 0.2vh 0.6vh;
+}
+begin {
+  z-index: 10;
+  display: block;
+}
+end {
+  z-index: 20;
+  display: none;
+}
+#close-button-game:active, #close-button-test:active, #close-button-game-set:active, #close-button-test-set:active, begin:active, end:active {
+  top: 0.5vmin;
+}
+.export, .native {
+  display: flex;
+  flex-direction:  row;
+  align-items:     center;
+  justify-content: center;
+  margin:  0.5vmin;
+  padding: 0.5vmin;
+}
+h2 {
+  position: absolute;
+  top: calc(10vh); 
+  left:          0;
+  z-index:       1;
+  width:     30vh;
+  margin:    0 calc((100vw - 30vh)/2) 0 calc((100vw - 30vh)/2);
+  font-size:  5vh;
+  font-family: name-font;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  opacity: 1;
+  cursor: pointer;
+  user-select: none; 
+}
+pause, update-button, help-button, set-button, auto-button, exchange-button {
+  position: relative;
+  top: 0;
+  left: 0;
+  font-family: input-font;
+  text-decoration: none;
+  text-align: center;
+  border: 0.5vmin solid;
+  cursor: pointer;
+  display: flex;
+  align-items:     center;
+  justify-content: center;
+  user-select: none;
+}
+update-button:active, help-button:active, set-button:active, auto-button:active, exchange-button:active {
+  top: -0.6vh;
+}
+pause:active, l:active, d:active {
+  position: relative;
+}
+pause:active {
+  top:  0.6vh;
+}
+/* // touch можно здесь, а можно в jQuery — без разницы */ 
+/* l:active {
+  top:  0.6vh;  
+  left: 0.6vh;  
+}   
+d:active {
+  top:   0.6vh; 
+  right: 0.6vh; 
+}    */     
+update-button, help-button, set-button, auto-button, exchange-button {
+  width:  9vh;
+  height: 9vh;
+  border-radius: 4.5vh;
+}    
+.pictogram {
+  width:  6vh;
+  height: 6vh;
+}
+group {
+  position: absolute;
+  top: calc(11vh + 7vh);
+  width:  100vw;
+  z-index: 50;
+  display: flex;
+  flex-direction:  column;
+  align-items:     center;
+  justify-content: space-between;
+  margin:  0;
+  padding: 0;
+}
+user-opponent {
+  position: relative;
+  width:  95vmin;
+  height: 3.2vh; 
+  display: flex;
+  flex-direction:  row;
+  align-items:     center;
+  justify-content: center;
+  text-decoration: none;
+  user-select: none;
+}
+#l, #d, pause {
+  position: relative;
+  margin: 3.0vh;
+  display: flex;
+  flex-direction:  row;
+  align-items:     center;
+  justify-content: center;
+}
+#l, #d{
+  width:  5vh;
+  cursor: pointer;
+}
+pause {
+  width:  8vh; 
+  height: 8vh;
+  cursor:  pointer;
+  padding: 0;
+  border-color: gray;
+  border: 0.5vmin solid;
+  border-radius: 8vh/8vh;
+}
+l, d {
+  border: 0.3vmax solid;
+  border-radius: 0.3vmax;
+  border-color:  gray;
+  height: 3.5vh;
+  font-family: name-font;
+  font-size: 2.5vh; 
+  background: rgba(0, 0, 0, 0.7);
+}
+l {
+  padding: 0.5vh 1.2vh 2.5vh 1.2vh;  /*надо подбирать одинаковые по длине слова*/
+}
+d {
+  padding: 0.5vh 1.2vh 2.5vh 1.2vh;  /*надо подбирать одинаковые по длине слова*/
+}
+.small-picture, 
+.small-picture-pause-0, .small-picture-pause-1, .small-picture-pause-2, .small-picture-pause-3, 
+.small-picture-play-0,   .small-picture-play-1,  .small-picture-play-2, .small-picture-play-3 {
+  position: relative;
+  width:  5vh;
+  height: 5vh;
+  z-index: 10;
+  display: none;
+  top: 0;
+}
+.small-picture { 
+  /*заполнение пустоты при загрузке*/
+  display: flex;
+}
+table {
+  position: absolute;
+  bottom: 11.5vh; 
+  left: calc(50vw - (50vh/2));
+  z-index: 10;
+  width:   50vh;
+  height:  12vh;
+  text-align: center;
+  user-select: none;
+}
+td {
+  z-index: 10;
+  width:  calc(40vh/2);
+  height: calc(12vh/3);
+  font-size: 2vh;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0.5vh ridge #cccccc;
+  padding: 0;
+}
+td:active {
+  width:  calc(40vh/2 - 1vh);
+  height: calc(12vh/3 - 1vh);
+  border: 1vh ridge #cccccc;
+  font-size: 1.5vh;
+  padding: 0;
+}
+#unit, #field, #time, #move, #check-mate, #omega {
+  text-align: center;
+  font-family: name-font;
+}
+#canvasicogon {
+  position: absolute;
+  opacity: 1;
+  z-index: 1;
+  user-select: none;
+}
+canvas {
+  filter: grayscale(60%);     
+}
+
+/* ВЫБОР ОФОРМЛЕНИЯ (финальная оптимизированная версия) */
+:root {
+  /* Цветовые переменные */
+  --vo-color-1: #3300ff;
+  --vo-color-2: #ff7700;
+  --bv-color-1: #00aaaa;
+  --bv-color-2: #ff00bb;
+  --og-color-1: #ff0000;
+  --og-color-2: #00ff00;
+  --border-color: #999999;
+  
+  /* Размерные переменные */
+  --radius-small: 0.8vmax;
+  --radius-large: 1.5vh / 2.5vh;
+  --active-offset: 0.4vmax;
+}
+
+#left-up-corner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+select-csv {
+  display: none;
+  margin: 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+csv {
+  position: relative;
+}
+csv:active {
+  top: var(--active-offset);
+}
+
+.select-csv {
+  position: relative;
+  margin: 1vh;
+  padding: 0;
+  border: 0.3vmax solid var(--border-color);
+  border-radius: var(--radius-small);
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.bv, .vo, .og {
+  position: relative;
+  z-index: 3;
+  display: inline-block;
+  width: 3vh;
+  height: 5vh;
+  margin: 1vmin;
+  border-radius: var(--radius-large);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Градиенты с точным позиционированием как в оригинале */
+.vo {
+  order: 1;
+  background: radial-gradient(ellipse farthest-corner at 50% 20%, var(--vo-color-1), var(--vo-color-2));
+}
+.vo:hover {
+  background: radial-gradient(ellipse farthest-corner at 50% 50%, var(--vo-color-1), var(--vo-color-2));
+}
+.vo:active {
+  background: radial-gradient(ellipse farthest-corner at 50% 80%, var(--vo-color-1), var(--vo-color-2));
+}
+
+.bv {
+  order: 2;
+  background: radial-gradient(ellipse farthest-corner at 50% 20%, var(--bv-color-1), var(--bv-color-2));
+}
+.bv:hover {
+  background: radial-gradient(ellipse farthest-corner at 50% 50%, var(--bv-color-1), var(--bv-color-2));
+}
+.bv:active {
+  background: radial-gradient(ellipse farthest-corner at 50% 80%, var(--bv-color-1), var(--bv-color-2));
+}
+
+.og {
+  order: 3;
+  background: radial-gradient(ellipse farthest-corner at 50% 20%, var(--og-color-1), var(--og-color-2));
+}
+.og:hover {
+  background: radial-gradient(ellipse farthest-corner at 50% 50%, var(--og-color-1), var(--og-color-2));
+}
+.og:active {
+  background: radial-gradient(ellipse farthest-corner at 50% 80%, var(--og-color-1), var(--og-color-2));
+}

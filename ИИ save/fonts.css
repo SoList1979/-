@@ -1,0 +1,24 @@
+@font-face {
+  font-family: name-font;
+  src: url(../fonts/Ouroboros.woff2);
+}
+@font-face {
+  font-family: head-font; 
+  src: url(../fonts/Nadejda.woff2);
+}
+@font-face {
+  font-family: hand-font; 
+  src: url(../fonts/Olietta.woff2) format("woff2");
+}
+@font-face {
+  font-family: input-font;
+  src: url(../fonts/Academy.woff2);
+}
+@font-face {
+  font-family: load-font;
+  src: url(../fonts/Cooper.woff2);
+}
+@font-face {
+  font-family: frombase-font;
+  src: url(../fonts/Ubuntumono.woff2);
+}

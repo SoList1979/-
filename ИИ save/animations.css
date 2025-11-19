@@ -1,0 +1,169 @@
+/*  пульсация кнопки              */
+@-webkit-keyframes pulsate-submit {
+    0% {color: #ff3300;} 
+   25% {color: #ffcc00;} 
+   50% {color: #cccc00;} 
+   75% {color: #ffcc00;} 
+  100% {color: #ff3300;}
+}
+@-moz-keyframes pulsate-submit {
+    0% {color: #ff3300;} 
+   25% {color: #ffcc00;} 
+   50% {color: #cccc00;} 
+   75% {color: #ffcc00;} 
+  100% {color: #ff3300;}
+}
+@-o-keyframes pulsate-submit {
+    0% {color: #ff3300;} 
+   25% {color: #ffcc00;} 
+   50% {color: #cccc00;} 
+   75% {color: #ffcc00;} 
+  100% {color: #ff3300;}
+}
+@keyframes pulsate-submit {
+    0% {color: #ff3300;} 
+   25% {color: #ffcc00;} 
+   50% {color: #cccc00;} 
+   75% {color: #ffcc00;} 
+  100% {color: #ff3300;}
+}
+/*-----------------------------------*/
+@-webkit-keyframes pulsate-reload {
+    0% {color: #ffff00;} 
+   25% {color: #ffff88;} 
+   50% {color: #ffffff;} 
+   75% {color: #ffff88;} 
+  100% {color: #ffff00;}
+}
+@-moz-keyframes pulsate-reload {
+    0% {color: #ffff00;} 
+   25% {color: #ffff88;} 
+   50% {color: #ffffff;} 
+   75% {color: #ffff88;} 
+  100% {color: #ffff00;}
+}
+@-o-keyframes pulsate-reload {
+    0% {color: #ffff00;} 
+   25% {color: #ffff88;} 
+   50% {color: #ffffff;} 
+   75% {color: #ffff88;} 
+  100% {color: #ffff00;}
+}
+@keyframes pulsate-reload {
+    0% {color: #ffff00;} 
+   25% {color: #ffff88;} 
+   50% {color: #ffffff;} 
+   75% {color: #ffff88;} 
+  100% {color: #ffff00;}
+}
+/*-----------------------------------*/
+@-webkit-keyframes pulsate-negaive-result {
+    0% {color: #ff0000;} 
+   25% {color: #ff3300;} 
+   50% {color: #ff6600;} 
+   75% {color: #ff3300;} 
+  100% {color: #ff0000;}
+}
+@-moz-keyframes pulsate-negaive-result {
+    0% {color: #ff0000;} 
+   25% {color: #ff3300;} 
+   50% {color: #ff6600;} 
+   75% {color: #ff3300;} 
+  100% {color: #ff0000;}
+}
+@-o-keyframes pulsate-negaive-result {
+    0% {color: #ff0000;} 
+   25% {color: #ff3300;} 
+   50% {color: #ff6600;} 
+   75% {color: #ff3300;} 
+  100% {color: #ff0000;}
+}
+@keyframes pulsate-negaive-result {
+    0% {color: #ff0000;} 
+   25% {color: #ff3300;} 
+   50% {color: #ff6600;} 
+   75% {color: #ff3300;} 
+  100% {color: #ff0000;}
+}
+/*-----------------------------------*/
+@-webkit-keyframes pulsate-positive-result {
+    0% {color: #00ff00;} 
+   25% {color: #ff7700;} 
+   50% {color: #ffff00;} 
+   75% {color: #ff7700;} 
+  100% {color: #00ff00;}
+}
+@-moz-keyframes pulsate-positive-resultn {
+    0% {color: #00ff00;} 
+   25% {color: #ff7700;} 
+   50% {color: #ffff00;} 
+   75% {color: #ff7700;} 
+  100% {color: #00ff00;}
+}
+@-o-keyframes pulsate-positive-result {
+    0% {color: #00ff00;} 
+   25% {color: #ff7700;} 
+   50% {color: #ffff00;} 
+   75% {color: #ff7700;} 
+  100% {color: #00ff00;}
+}
+@keyframes pulsate-positive-result {
+    0% {color: #00ff00;} 
+   25% {color: #00ff77;} 
+   50% {color: #00ffff;} 
+   75% {color: #00ff77;} 
+  100% {color: #00ff00;}
+}
+/*//////////////////////////////////////////*/
+/*  Zoom на формах            */
+@-webkit-keyframes animatezoom {
+    from {transform: scale(0); border-radius: 50%;} 
+      to {transform: scale(1); border-radius: 10vmin;}
+}
+@-moz-keyframes animatezoom {
+    from {transform: scale(0); border-radius: 50%;} 
+      to {transform: scale(1); border-radius: 10vmin;}
+}
+@-o-keyframes animatezoom {
+    from {transform: scale(0); border-radius: 50%;} 
+      to {transform: scale(1); border-radius: 10vmin;}
+}
+@keyframes animatezoom {
+    from {transform: scale(0); border-radius: 50%;} 
+      to {transform: scale(1); border-radius: 10vmin;}
+}
+/*в РЕЖИМ ЧТЕНИЯ*/
+@-webkit-keyframes readOn {
+     0% {filter: grayscale(0   );} 
+   100% {filter: grayscale(100%);}
+}
+@-moz-keyframes readOn {
+     0% {filter: grayscale(0   );} 
+   100% {filter: grayscale(100%);}
+}
+@-o-keyframes readOn {
+     0% {filter: grayscale(0   );} 
+   100% {filter: grayscale(100%);}
+}
+@keyframes readOn {
+     0% {filter: grayscale(0   );}  
+   100% {filter: grayscale(100%);}
+}
+
+/*ИЗ РЕЖИМА ЧТЕНИЯ*/
+@-webkit-keyframes readOff {
+     0% {filter: grayscale(100%);} 
+   100% {filter: grayscale(0   );} 
+}
+@-moz-keyframes readOff {
+     0% {filter: grayscale(100%);} 
+   100% {filter: grayscale(0   );} 
+}
+@-o-keyframes readOff {
+     0% {filter: grayscale(100%);} 
+   100% {filter: grayscale(0   );} 
+}
+@keyframes readOff {
+     0% {filter: grayscale(100%);} 
+   100% {filter: grayscale(0   );} 
+}
